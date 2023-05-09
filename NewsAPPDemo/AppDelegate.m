@@ -6,7 +6,10 @@
 //
 
 #import "AppDelegate.h"
-
+#import "GTMineViewController.h"
+#import "GTVideoViewController.h"
+#import "GTRecommendViewController.h"
+#import "GTNewsViewController.h"
 @interface AppDelegate ()
 
 @end
@@ -17,13 +20,23 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
     self.window = [[UIWindow alloc]initWithFrame:[[UIScreen mainScreen] bounds]];
-    
+    self.window.backgroundColor = [UIColor whiteColor];
+
     //创建UITabBar
-    //UITabBarController *tabBarVC = [[UITabBarController alloc]init];
+    UITabBarController *tabBarVC = [[UITabBarController alloc]init];
     
-    self.window.backgroundColor = [UIColor redColor];
+    GTMineViewController *gtMineVC = [[GTMineViewController alloc]init];
+    GTNewsViewController *gtNewsVC = [[GTNewsViewController alloc]init];
+    GTVideoViewController *gtVideoVC = [[GTVideoViewController alloc]init];
+    GTRecommendViewController *gtRecommendVC = [[GTRecommendViewController alloc]init];
     
-    self.window.rootViewController = [[UIViewController alloc]init];
+    
+    UINavigationController *navVC = [[UINavigationController alloc]initWithRootViewController:tabBarVC];
+    navVC.navigationBar.barStyle = UIBarStyleDefault;
+    navVC.navigationBarHidden = NO;
+    [tabBarVC setViewControllers:@[gtNewsVC,gtVideoVC,gtRecommendVC,gtMineVC]];
+
+    self.window.rootViewController = navVC;
     [self.window makeKeyAndVisible];
     return YES;
 }

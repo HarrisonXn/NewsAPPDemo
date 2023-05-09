@@ -13,6 +13,11 @@
 		8D1E26EE2A09DEEA003D9B70 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8D1E26ED2A09DEEA003D9B70 /* Assets.xcassets */; };
 		8D1E26F12A09DEEA003D9B70 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8D1E26EF2A09DEEA003D9B70 /* LaunchScreen.storyboard */; };
 		8D1E26F42A09DEEA003D9B70 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 8D1E26F32A09DEEA003D9B70 /* main.m */; };
+		8DA506CC2A09E87A00524ED8 /* GTNewsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8DA506CB2A09E87A00524ED8 /* GTNewsViewController.m */; };
+		8DA506D92A09E94100524ED8 /* GTVideoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8DA506D72A09E94100524ED8 /* GTVideoViewController.m */; };
+		8DA506DF2A09E98900524ED8 /* GTRecommendViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8DA506DE2A09E98900524ED8 /* GTRecommendViewController.m */; };
+		8DA506E22A09E99A00524ED8 /* GTMineViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8DA506E12A09E99A00524ED8 /* GTMineViewController.m */; };
+		8DA506E72A09EEF300524ED8 /* icon.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 8DA506E62A09EEF300524ED8 /* icon.bundle */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +31,15 @@
 		8D1E26F02A09DEEA003D9B70 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		8D1E26F22A09DEEA003D9B70 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8D1E26F32A09DEEA003D9B70 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		8DA506CA2A09E87A00524ED8 /* GTNewsViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GTNewsViewController.h; sourceTree = "<group>"; };
+		8DA506CB2A09E87A00524ED8 /* GTNewsViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GTNewsViewController.m; sourceTree = "<group>"; };
+		8DA506D72A09E94100524ED8 /* GTVideoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GTVideoViewController.m; sourceTree = "<group>"; };
+		8DA506D82A09E94100524ED8 /* GTVideoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GTVideoViewController.h; sourceTree = "<group>"; };
+		8DA506DD2A09E98900524ED8 /* GTRecommendViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GTRecommendViewController.h; sourceTree = "<group>"; };
+		8DA506DE2A09E98900524ED8 /* GTRecommendViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GTRecommendViewController.m; sourceTree = "<group>"; };
+		8DA506E02A09E99A00524ED8 /* GTMineViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GTMineViewController.h; sourceTree = "<group>"; };
+		8DA506E12A09E99A00524ED8 /* GTMineViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GTMineViewController.m; sourceTree = "<group>"; };
+		8DA506E62A09EEF300524ED8 /* icon.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = icon.bundle; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -42,6 +56,7 @@
 		8D1E26D22A09DEE9003D9B70 = {
 			isa = PBXGroup;
 			children = (
+				8DA506E62A09EEF300524ED8 /* icon.bundle */,
 				8D1E26DD2A09DEE9003D9B70 /* NewsAPPDemo */,
 				8D1E26DC2A09DEE9003D9B70 /* Products */,
 			);
@@ -58,6 +73,7 @@
 		8D1E26DD2A09DEE9003D9B70 /* NewsAPPDemo */ = {
 			isa = PBXGroup;
 			children = (
+				8DA506C92A09E83C00524ED8 /* Component */,
 				8D1E26DE2A09DEEA003D9B70 /* AppDelegate.h */,
 				8D1E26DF2A09DEEA003D9B70 /* AppDelegate.m */,
 				8D1E26E42A09DEEA003D9B70 /* ViewController.h */,
@@ -69,6 +85,85 @@
 				8D1E26EA2A09DEEA003D9B70 /* NewsAPPDemo.xcdatamodeld */,
 			);
 			path = NewsAPPDemo;
+			sourceTree = "<group>";
+		};
+		8DA506C92A09E83C00524ED8 /* Component */ = {
+			isa = PBXGroup;
+			children = (
+				8DA506DA2A09E94C00524ED8 /* GTMine */,
+				8DA506D52A09E94100524ED8 /* GTVideo */,
+				8DA506D42A09E8CF00524ED8 /* GTRecommend */,
+				8DA506CD2A09E87F00524ED8 /* GTNews */,
+			);
+			path = Component;
+			sourceTree = "<group>";
+		};
+		8DA506CD2A09E87F00524ED8 /* GTNews */ = {
+			isa = PBXGroup;
+			children = (
+				8DA506CE2A09E88E00524ED8 /* Controller */,
+			);
+			path = GTNews;
+			sourceTree = "<group>";
+		};
+		8DA506CE2A09E88E00524ED8 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				8DA506CA2A09E87A00524ED8 /* GTNewsViewController.h */,
+				8DA506CB2A09E87A00524ED8 /* GTNewsViewController.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		8DA506D42A09E8CF00524ED8 /* GTRecommend */ = {
+			isa = PBXGroup;
+			children = (
+				8DA506DB2A09E96900524ED8 /* Controller */,
+			);
+			path = GTRecommend;
+			sourceTree = "<group>";
+		};
+		8DA506D52A09E94100524ED8 /* GTVideo */ = {
+			isa = PBXGroup;
+			children = (
+				8DA506D62A09E94100524ED8 /* Controller */,
+			);
+			path = GTVideo;
+			sourceTree = "<group>";
+		};
+		8DA506D62A09E94100524ED8 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				8DA506D82A09E94100524ED8 /* GTVideoViewController.h */,
+				8DA506D72A09E94100524ED8 /* GTVideoViewController.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		8DA506DA2A09E94C00524ED8 /* GTMine */ = {
+			isa = PBXGroup;
+			children = (
+				8DA506DC2A09E97200524ED8 /* Controller */,
+			);
+			path = GTMine;
+			sourceTree = "<group>";
+		};
+		8DA506DB2A09E96900524ED8 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				8DA506DD2A09E98900524ED8 /* GTRecommendViewController.h */,
+				8DA506DE2A09E98900524ED8 /* GTRecommendViewController.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		8DA506DC2A09E97200524ED8 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				8DA506E02A09E99A00524ED8 /* GTMineViewController.h */,
+				8DA506E12A09E99A00524ED8 /* GTMineViewController.m */,
+			);
+			path = Controller;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -130,6 +225,7 @@
 			files = (
 				8D1E26F12A09DEEA003D9B70 /* LaunchScreen.storyboard in Resources */,
 				8D1E26EE2A09DEEA003D9B70 /* Assets.xcassets in Resources */,
+				8DA506E72A09EEF300524ED8 /* icon.bundle in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -140,10 +236,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8DA506CC2A09E87A00524ED8 /* GTNewsViewController.m in Sources */,
 				8D1E26F42A09DEEA003D9B70 /* main.m in Sources */,
 				8D1E26E62A09DEEA003D9B70 /* ViewController.m in Sources */,
+				8DA506DF2A09E98900524ED8 /* GTRecommendViewController.m in Sources */,
+				8DA506E22A09E99A00524ED8 /* GTMineViewController.m in Sources */,
 				8D1E26E02A09DEEA003D9B70 /* AppDelegate.m in Sources */,
 				8D1E26EC2A09DEEA003D9B70 /* NewsAPPDemo.xcdatamodeld in Sources */,
+				8DA506D92A09E94100524ED8 /* GTVideoViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -281,11 +381,13 @@
 				DEVELOPMENT_TEAM = 82MLR5KWY4;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = NewsAPPDemo/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = "仿今日头条";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = "";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -308,11 +410,13 @@
 				DEVELOPMENT_TEAM = 82MLR5KWY4;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = NewsAPPDemo/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = "仿今日头条";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = "";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
