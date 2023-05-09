@@ -6,6 +6,7 @@
 //
 
 #import "GTNewsViewController.h"
+#import "GTNormalTableViewCell.h"
 
 @interface GTNewsViewController ()<UITableViewDelegate,UITableViewDataSource>
 @property (strong,nonatomic) NSMutableArray *arr;
@@ -37,14 +38,14 @@
 
 #pragma mark ---TableViewDelegate
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
-    UITableViewCell *newsTableViewCell = [tableView dequeueReusableCellWithIdentifier:@"newsTableViewCell"];
+    GTNormalTableViewCell *newsTableViewCell = [tableView dequeueReusableCellWithIdentifier:@"newsTableViewCell"];
     if (!newsTableViewCell) {
-        newsTableViewCell = [[UITableViewCell alloc]initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:@"newsTableViewCell"];
+        newsTableViewCell = [[GTNormalTableViewCell alloc]initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:@"newsTableViewCell"];
         newsTableViewCell.selectionStyle = UITableViewCellSelectionStyleNone;
+        
+        [newsTableViewCell layoutTableViewCell];
     }
-    newsTableViewCell.textLabel.text = [NSString stringWithFormat:@"这是主标题 -- %@",@(indexPath.row + 1)];
-    newsTableViewCell.detailTextLabel.text = @"这是副标题";
-    newsTableViewCell.imageView.image = [UIImage imageNamed:@"icon.bundle/video@2x.png"];
+
     return newsTableViewCell;
 }
 
