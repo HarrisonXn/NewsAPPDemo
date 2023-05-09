@@ -33,7 +33,6 @@
     
     UINavigationController *navVC = [[UINavigationController alloc]initWithRootViewController:tabBarVC];
     navVC.navigationBar.barStyle = UIBarStyleDefault;
-    navVC.navigationBarHidden = NO;
     [tabBarVC setViewControllers:@[gtNewsVC,gtVideoVC,gtRecommendVC,gtMineVC]];
 
     self.window.rootViewController = navVC;
