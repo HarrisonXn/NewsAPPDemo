@@ -7,10 +7,11 @@
 
 #import "GTNormalTableViewCell.h"
 @interface GTNormalTableViewCell()
-@property (strong,nonatomic) UILabel *titleLabel;
-@property (strong,nonatomic) UILabel *sourceLabel;
-@property (strong,nonatomic) UILabel *commentLabel;
-@property (strong,nonatomic) UILabel *timeLabel;
+@property (strong,nonatomic,readwrite) UILabel *titleLabel;
+@property (strong,nonatomic,readwrite) UILabel *sourceLabel;
+@property (strong,nonatomic,readwrite) UILabel *commentLabel;
+@property (strong,nonatomic,readwrite) UILabel *timeLabel;
+@property (strong,nonatomic,readwrite) UIImageView *rightImageView;
 @end
 
 @implementation GTNormalTableViewCell
@@ -49,6 +50,12 @@
             self.timeLabel.textColor = [UIColor grayColor];
             self.timeLabel;
         })];
+        
+        [self.contentView addSubview:({
+            self.rightImageView = [[UIImageView alloc]initWithFrame:CGRectMake(300, 15, 70, 70)];
+            self.contentMode = UIViewContentModeScaleAspectFit;
+            self.rightImageView;
+        })];
     }
     return self;
 }
@@ -67,5 +74,6 @@
     [self.timeLabel sizeToFit];
     self.timeLabel.frame = CGRectMake(self.commentLabel.frame.origin.x + self.commentLabel.frame.size.width + 15 , self.timeLabel.frame.origin.y, self.timeLabel.frame.size.width, self.timeLabel.frame.size.height);
     
+    self.rightImageView.image = [UIImage imageNamed:@"AppIcon"];
 }
 @end
