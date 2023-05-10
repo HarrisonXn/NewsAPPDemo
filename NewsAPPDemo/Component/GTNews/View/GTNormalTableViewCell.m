@@ -12,6 +12,7 @@
 @property (strong,nonatomic,readwrite) UILabel *commentLabel;
 @property (strong,nonatomic,readwrite) UILabel *timeLabel;
 @property (strong,nonatomic,readwrite) UIImageView *rightImageView;
+@property (strong,nonatomic,readwrite) UIButton *deleteButton;
 @end
 
 @implementation GTNormalTableViewCell
@@ -53,8 +54,16 @@
         
         [self.contentView addSubview:({
             self.rightImageView = [[UIImageView alloc]initWithFrame:CGRectMake(300, 15, 70, 70)];
-            self.contentMode = UIViewContentModeScaleAspectFit;
+            self.rightImageView.contentMode = UIViewContentModeScaleAspectFit;
             self.rightImageView;
+        })];
+        
+        [self.contentView addSubview:({
+            self.deleteButton = [[UIButton alloc]initWithFrame:CGRectMake(240, 80, 30, 20)];
+            self.deleteButton.backgroundColor = [UIColor blueColor];
+            [self.deleteButton setTitle:@"X" forState:normal];
+            [self.deleteButton setTitle:@"Y" forState:UIControlStateHighlighted];
+            self.deleteButton;
         })];
     }
     return self;
