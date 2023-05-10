@@ -63,6 +63,7 @@
             self.deleteButton.backgroundColor = [UIColor blueColor];
             [self.deleteButton setTitle:@"X" forState:normal];
             [self.deleteButton setTitle:@"Y" forState:UIControlStateHighlighted];
+            [self.deleteButton addTarget:self action:@selector(deleteButtonClick) forControlEvents:UIControlEventTouchUpInside];
             self.deleteButton;
         })];
     }
@@ -84,5 +85,10 @@
     self.timeLabel.frame = CGRectMake(self.commentLabel.frame.origin.x + self.commentLabel.frame.size.width + 15 , self.timeLabel.frame.origin.y, self.timeLabel.frame.size.width, self.timeLabel.frame.size.height);
     
     self.rightImageView.image = [UIImage imageNamed:@"AppIcon"];
+}
+
+#pragma mark -- 删除按钮点击事件
+-(void)deleteButtonClick{
+    NSLog(@"删除按钮被点击");
 }
 @end

@@ -19,6 +19,7 @@
 		8DA506E22A09E99A00524ED8 /* GTMineViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8DA506E12A09E99A00524ED8 /* GTMineViewController.m */; };
 		8DA506E72A09EEF300524ED8 /* icon.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 8DA506E62A09EEF300524ED8 /* icon.bundle */; };
 		8DA506EB2A0A3E5600524ED8 /* GTNormalTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8DA506EA2A0A3E5600524ED8 /* GTNormalTableViewCell.m */; };
+		8DA506EE2A0B495500524ED8 /* GTDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8DA506ED2A0B495500524ED8 /* GTDetailViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -43,6 +44,8 @@
 		8DA506E62A09EEF300524ED8 /* icon.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = icon.bundle; sourceTree = "<group>"; };
 		8DA506E92A0A3E5600524ED8 /* GTNormalTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GTNormalTableViewCell.h; sourceTree = "<group>"; };
 		8DA506EA2A0A3E5600524ED8 /* GTNormalTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GTNormalTableViewCell.m; sourceTree = "<group>"; };
+		8DA506EC2A0B495500524ED8 /* GTDetailViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GTDetailViewController.h; sourceTree = "<group>"; };
+		8DA506ED2A0B495500524ED8 /* GTDetailViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GTDetailViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -115,6 +118,8 @@
 			children = (
 				8DA506CA2A09E87A00524ED8 /* GTNewsViewController.h */,
 				8DA506CB2A09E87A00524ED8 /* GTNewsViewController.m */,
+				8DA506EC2A0B495500524ED8 /* GTDetailViewController.h */,
+				8DA506ED2A0B495500524ED8 /* GTDetailViewController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -255,6 +260,7 @@
 				8DA506DF2A09E98900524ED8 /* GTRecommendViewController.m in Sources */,
 				8DA506E22A09E99A00524ED8 /* GTMineViewController.m in Sources */,
 				8D1E26E02A09DEEA003D9B70 /* AppDelegate.m in Sources */,
+				8DA506EE2A0B495500524ED8 /* GTDetailViewController.m in Sources */,
 				8DA506EB2A0A3E5600524ED8 /* GTNormalTableViewCell.m in Sources */,
 				8D1E26EC2A09DEEA003D9B70 /* NewsAPPDemo.xcdatamodeld in Sources */,
 				8DA506D92A09E94100524ED8 /* GTVideoViewController.m in Sources */,

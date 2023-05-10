@@ -7,6 +7,7 @@
 
 #import "GTNewsViewController.h"
 #import "GTNormalTableViewCell.h"
+#import "GTDetailViewController.h"
 
 @interface GTNewsViewController ()<UITableViewDelegate,UITableViewDataSource>
 @property (strong,nonatomic) NSMutableArray *arr;
@@ -50,10 +51,14 @@
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
-    UIViewController *vc = [[UIViewController alloc]init];
-    vc.view.frame = self.view.frame;
-    vc.navigationItem.title = [NSString stringWithFormat:@"这是%@号标题",@(indexPath.row + 1)];
-    [self.navigationController pushViewController:vc animated:YES];
+//        UIViewController *vc = [[UIViewController alloc]init];
+//        vc.view.frame = self.view.frame;
+//        vc.navigationItem.title = [NSString stringWithFormat:@"这是%@号标题",@(indexPath.row + 1)];
+//        [self.navigationController pushViewController:vc animated:YES];
+    
+    GTDetailViewController *webView = [[GTDetailViewController alloc]init];
+    webView.title = [NSString stringWithFormat:@"这是第%@行", @(indexPath.row +1)];
+    [self.navigationController pushViewController:webView animated:YES];
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
