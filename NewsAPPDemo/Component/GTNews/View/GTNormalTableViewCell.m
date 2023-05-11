@@ -6,6 +6,7 @@
 //
 
 #import "GTNormalTableViewCell.h"
+
 @interface GTNormalTableViewCell()
 @property (strong,nonatomic,readwrite) UILabel *titleLabel;
 @property (strong,nonatomic,readwrite) UILabel *sourceLabel;
@@ -89,6 +90,10 @@
 
 #pragma mark -- 删除按钮点击事件
 -(void)deleteButtonClick{
-    NSLog(@"删除按钮被点击");
+    //-(void)tableViewCell:(UITableViewCell *)tableViewCell clickDeleteButton:(UIButton *)deleteButton;
+    //如果self.delegate和自定义的delegate方法存在，那么执行下面逻辑
+    if(self.delegate && [self.delegate respondsToSelector:@selector(tableViewCell:clickDeleteButton:)]){
+        [self.delegate tableViewCell:self clickDeleteButton:self.deleteButton];
+    }
 }
 @end

@@ -14,7 +14,7 @@
 
 @implementation GTDetailViewController
 - (void)dealloc{
-    [self.webView removeObserver:self forKeyPath:@"estimateProgress"];
+    [self.webView removeObserver:self forKeyPath:@"estimatedProgress"];
 }
 - (void)viewDidLoad {
     [super viewDidLoad];

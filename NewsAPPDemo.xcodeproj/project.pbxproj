@@ -20,6 +20,7 @@
 		8DA506E72A09EEF300524ED8 /* icon.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 8DA506E62A09EEF300524ED8 /* icon.bundle */; };
 		8DA506EB2A0A3E5600524ED8 /* GTNormalTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8DA506EA2A0A3E5600524ED8 /* GTNormalTableViewCell.m */; };
 		8DA506EE2A0B495500524ED8 /* GTDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8DA506ED2A0B495500524ED8 /* GTDetailViewController.m */; };
+		8DA506F12A0B763900524ED8 /* GTDeleteCellView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8DA506F02A0B763900524ED8 /* GTDeleteCellView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -46,6 +47,8 @@
 		8DA506EA2A0A3E5600524ED8 /* GTNormalTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GTNormalTableViewCell.m; sourceTree = "<group>"; };
 		8DA506EC2A0B495500524ED8 /* GTDetailViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GTDetailViewController.h; sourceTree = "<group>"; };
 		8DA506ED2A0B495500524ED8 /* GTDetailViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GTDetailViewController.m; sourceTree = "<group>"; };
+		8DA506EF2A0B763900524ED8 /* GTDeleteCellView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GTDeleteCellView.h; sourceTree = "<group>"; };
+		8DA506F02A0B763900524ED8 /* GTDeleteCellView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GTDeleteCellView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -180,6 +183,8 @@
 			children = (
 				8DA506E92A0A3E5600524ED8 /* GTNormalTableViewCell.h */,
 				8DA506EA2A0A3E5600524ED8 /* GTNormalTableViewCell.m */,
+				8DA506EF2A0B763900524ED8 /* GTDeleteCellView.h */,
+				8DA506F02A0B763900524ED8 /* GTDeleteCellView.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -263,6 +268,7 @@
 				8DA506EE2A0B495500524ED8 /* GTDetailViewController.m in Sources */,
 				8DA506EB2A0A3E5600524ED8 /* GTNormalTableViewCell.m in Sources */,
 				8D1E26EC2A09DEEA003D9B70 /* NewsAPPDemo.xcdatamodeld in Sources */,
+				8DA506F12A0B763900524ED8 /* GTDeleteCellView.m in Sources */,
 				8DA506D92A09E94100524ED8 /* GTVideoViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

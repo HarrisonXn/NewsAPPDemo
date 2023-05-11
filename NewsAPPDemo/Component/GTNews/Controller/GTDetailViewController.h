@@ -1,7 +1,7 @@
 //
 //  GTDetailViewController.h
 //  NewsAPPDemo
-//
+//  WebView控制器
 //  Created by 邢世航 on 2023/5/10.
 //
 

@@ -8,10 +8,12 @@
 #import "GTNewsViewController.h"
 #import "GTNormalTableViewCell.h"
 #import "GTDetailViewController.h"
+#import "GTDeleteCellView.h"
 
-@interface GTNewsViewController ()<UITableViewDelegate,UITableViewDataSource>
+@interface GTNewsViewController ()<UITableViewDelegate,UITableViewDataSource,GTNormalTableViewCellDelegate>
 @property (strong,nonatomic) NSMutableArray *arr;
 @property (strong,nonatomic) UITableView *tableView;
+@property (strong,nonatomic) NSMutableArray *dateArray;
 @end
 
 @implementation GTNewsViewController
@@ -22,6 +24,11 @@
         self.tabBarItem.title = @"新闻";
         self.tabBarItem.image = [UIImage imageNamed:@"icon.bundle/page@2x.png"];
         self.tabBarItem.selectedImage = [UIImage imageNamed:@"icon.bundle/page_selected@2x.png"];
+        
+        self.dateArray = @[].mutableCopy;
+        for (int i = 0; i < 20; i++) {
+            [self.dateArray addObject:@(i)];
+        }
     }
     return self;
 }
@@ -43,7 +50,7 @@
     if (!newsTableViewCell) {
         newsTableViewCell = [[GTNormalTableViewCell alloc]initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:@"newsTableViewCell"];
         newsTableViewCell.selectionStyle = UITableViewCellSelectionStyleNone;
-        
+        newsTableViewCell.delegate = self;
         [newsTableViewCell layoutTableViewCell];
     }
 
@@ -64,12 +71,25 @@
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
     return 100;
 }
-#pragma mark ---TableViewDataSource
+#pragma mark -- TableViewDataSource
 //- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
 //    return 4;
 //}
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
-    return 20;
+    return self.dateArray.count;
+}
+
+#pragma mark -- 点击自定义cell的delegate GTNormalTableViewCellDelegate
+-(void)tableViewCell:(UITableViewCell *)tableViewCell clickDeleteButton:(UIButton *)deleteButton{
+    GTDeleteCellView *deleteView = [[GTDeleteCellView alloc]initWithFrame:self.view.bounds];
+    CGRect rect = [tableViewCell convertRect:deleteButton.frame toView:nil];
+    __weak typeof (self) weakself = self;
+    [deleteView showDeleteViewFromPoint:rect.origin clickBlock:^{
+        __strong typeof (self) strongself = weakself;
+//        NSLog(@"蓝色方块被点击");
+        [self.dateArray removeLastObject];
+        [self.tableView deleteRowsAtIndexPaths:@[[self.tableView indexPathForCell:tableViewCell]] withRowAnimation:UITableViewRowAnimationAutomatic];
+    }];
 }
 @end
