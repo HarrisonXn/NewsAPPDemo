@@ -9,16 +9,22 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
+@class GTListItem;
 @protocol GTNormalTableViewCellDelegate <NSObject>
 
--(void)tableViewCell:(UITableViewCell *)tableViewCell clickDeleteButton:(UIButton *)deleteButton;
+/// 点击删除按钮
+/// - Parameters:
+///   - tableViewCell: <#tableViewCell description#>
+///   - deleteButton: <#deleteButton description#>
+- (void)tableViewCell:(UITableViewCell *)tableViewCell clickDeleteButton:(UIButton *)deleteButton;
 
 @end
 
+/// 新闻列表Cell
 @interface GTNormalTableViewCell : UITableViewCell
--(void)layoutTableViewCell;
+- (void)layoutTableViewCellWithItem:(GTListItem *)item;
 
-@property (weak,nonatomic) id <GTNormalTableViewCellDelegate> delegate;
+@property (weak, nonatomic) id <GTNormalTableViewCellDelegate> delegate;
 @end
 
 NS_ASSUME_NONNULL_END

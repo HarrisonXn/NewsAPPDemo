@@ -6,7 +6,7 @@
 //
 
 #import "GTNormalTableViewCell.h"
-
+#import "GTListItem.h"
 @interface GTNormalTableViewCell()
 @property (strong,nonatomic,readwrite) UILabel *titleLabel;
 @property (strong,nonatomic,readwrite) UILabel *sourceLabel;
@@ -59,33 +59,40 @@
             self.rightImageView;
         })];
         
-        [self.contentView addSubview:({
-            self.deleteButton = [[UIButton alloc]initWithFrame:CGRectMake(240, 80, 30, 20)];
-            self.deleteButton.backgroundColor = [UIColor blueColor];
-            [self.deleteButton setTitle:@"X" forState:normal];
-            [self.deleteButton setTitle:@"Y" forState:UIControlStateHighlighted];
-            [self.deleteButton addTarget:self action:@selector(deleteButtonClick) forControlEvents:UIControlEventTouchUpInside];
-            self.deleteButton;
-        })];
+//        [self.contentView addSubview:({
+//            self.deleteButton = [[UIButton alloc]initWithFrame:CGRectMake(240, 80, 30, 20)];
+//            [self.deleteButton setTitle:@"X" forState:normal];
+//            [self.deleteButton setTitle:@"Y" forState:UIControlStateHighlighted];
+//            [self.deleteButton addTarget:self action:@selector(deleteButtonClick) forControlEvents:UIControlEventTouchUpInside];
+//            
+//            self.deleteButton.layer.cornerRadius = 10;
+//            self.deleteButton.layer.masksToBounds = YES;
+//            
+//            self.deleteButton.layer.borderColor = [UIColor lightGrayColor].CGColor;
+//            self.deleteButton.layer.borderWidth = 2;
+//            self.deleteButton;
+//        })];
     }
     return self;
 }
 
--(void)layoutTableViewCell{
-    self.titleLabel.text = @"iOS开发";
+-(void)layoutTableViewCellWithItem:(GTListItem *)item{
+    self.titleLabel.text = item.title;
     
-    self.sourceLabel.text = @"深耕技术";
+    self.sourceLabel.text = item.authorName;
     [self.sourceLabel sizeToFit];
     
-    self.commentLabel.text = @"84条评论";
+    self.commentLabel.text = item.category;
     [self.commentLabel sizeToFit];
     self.commentLabel.frame = CGRectMake(self.sourceLabel.frame.origin.x + self.sourceLabel.frame.size.width + 15 , self.commentLabel.frame.origin.y, self.commentLabel.frame.size.width, self.commentLabel.frame.size.height);
     
-    self.timeLabel.text = @"三分钟前";
+    self.timeLabel.text = item.date;
     [self.timeLabel sizeToFit];
     self.timeLabel.frame = CGRectMake(self.commentLabel.frame.origin.x + self.commentLabel.frame.size.width + 15 , self.timeLabel.frame.origin.y, self.timeLabel.frame.size.width, self.timeLabel.frame.size.height);
     
-    self.rightImageView.image = [UIImage imageNamed:@"AppIcon"];
+#warning message
+    UIImage *image = [UIImage imageWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString:item.picUrl]]];
+    self.rightImageView.image = image;
 }
 
 #pragma mark -- 删除按钮点击事件
